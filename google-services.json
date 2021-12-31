@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "875793506452",
+    "project_id": "pdm-logger",
+    "storage_bucket": "pdm-logger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875793506452:android:2c6c9f5468d7eef0921481",
+        "android_client_info": {
+          "package_name": "com.pdm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "875793506452-71q8srh166114gupkcg8fuusmsdgldn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbDqnh9bVr8F5tMIrMZgjB9qD693X_jFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "875793506452-71q8srh166114gupkcg8fuusmsdgldn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
