@@ -1,9 +1,23 @@
-import { Dialect, Sequelize } from 'sequelize'
+import {  Sequelize } from 'sequelize'
+const { config } = require("aws-sdk");
+ import{ getSecrets } from "./../utils/utilsBD.js" 
+const sequelizeConnection:any =new Sequelize(
+  config.database,
+  config.username,
+  config.password,
+  {
+    host: config.host,
+    dialect: "mysql",
+  }
+);
 
+sequelizeConnection.beforeConnect(async (config:any) => {
+    const databaseKeys:any = await getSecrets(process.env.DATABASE_PDM_LOGGER);
+    config.username = databaseKeys.username;
+    config.password = databaseKeys.password;
+    config.database = databaseKeys.dbname;
+    config.host = databaseKeys.host;
+  });
 
-const sequelizeConnection = new Sequelize('pdm_logger', 'pdm_logger', 'cGRtX2xvZ2dlcg==', {
-    host: 'pdmlogger.ca0hmdhlkt6h.us-east-2.rds.amazonaws.com',
-    dialect: 'mysql'
-})
 
 export default sequelizeConnection

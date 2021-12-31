@@ -1,18 +1,18 @@
 import express, { Application, Request, Response } from 'express'
 import routes from './routes'
 import dbInit from './db/init'
+import * as dotenv from 'dotenv';
 
 dbInit();
 const port = 3000
+dotenv.config();
 
 export const get = () => {
     const app: Application = express()
-
-    // Body parsing Middleware
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     app.get('/', async (req: Request, res: Response): Promise<Response> => {
-        return res.status(200).send({ message: `Welcome to PDM Logger! Endpoints available at http://localhost:${port}/api/v1` })
+        return res.status(200).send({ message: `Welcome to PDM Logger - Push Notifications! Endpoints available at http://domain:${port}/api/v1` })
     })
 
     app.use('/api/v1', routes)

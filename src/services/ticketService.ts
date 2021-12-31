@@ -1,6 +1,6 @@
 import * as ticketDal from '../db/dal/tickets'
-import { TicketOutput } from '../db/models/tickets'
+import { DataPushNotification } from '../models/data.model'
 
-export const getAll = (): Promise<TicketOutput[]> => {
+export const getAll = (): Promise<DataPushNotification[]> => {
     return ticketDal.getAll()
 }
