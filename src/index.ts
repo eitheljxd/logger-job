@@ -20,7 +20,7 @@ export const get = () => {
     return app
 }
 
-export const start = () => {
+export const handler = () => {
     const app = get()
     try {
         app.listen(port, () => {
@@ -31,4 +31,4 @@ export const start = () => {
     }
 }
 
-start()
+handler()
