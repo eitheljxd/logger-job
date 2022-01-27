@@ -1,7 +1,7 @@
-import {  Sequelize } from 'sequelize'
+import { Sequelize } from 'sequelize'
 const { config } = require("aws-sdk");
- import{ getSecrets } from "./../utils/utilsBD.js" 
-const sequelizeConnection:any =new Sequelize(
+//  import{ getSecrets } from "./../utils/utilsBD.js" 
+const sequelizeConnection: any = new Sequelize(
   config.database,
   config.username,
   config.password,
@@ -11,13 +11,13 @@ const sequelizeConnection:any =new Sequelize(
   }
 );
 
-sequelizeConnection.beforeConnect(async (config:any) => {
-    const databaseKeys:any = await getSecrets(process.env.DATABASE_PDM_LOGGER);
-    config.username = databaseKeys.username;
-    config.password = databaseKeys.password;
-    config.database = databaseKeys.dbname;
-    config.host = databaseKeys.host;
-  });
+sequelizeConnection.beforeConnect(async (config: any) => {
+  // const databaseKeys:any = await getSecrets(process.env.DATABASE_PDM_LOGGER);
+  config.username = "pdm_logger";
+  config.password = "cGRtX2xvZ2dlcg==";
+  config.database = "pdm_logger";
+  config.host = "pdmlogger.ca0hmdhlkt6h.us-east-2.rds.amazonaws.com";
+});
 
 
 export default sequelizeConnection

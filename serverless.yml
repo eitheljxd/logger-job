@@ -18,6 +18,7 @@ functions:
           method: any
           cors: true
 plugins:
+  - serverless-plugin-typescript
   - serverless-offline
 package:
   exclude:

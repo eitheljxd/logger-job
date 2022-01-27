@@ -42,7 +42,9 @@
   },
   "dependencies": {
     "@types/validator": "^13.7.1",
+    "aws-lambda": "^1.0.7",
     "aws-sdk": "^2.1063.0",
+    "aws-serverless-express": "^3.3.8",
     "eslint-plugin-jest": "^24.1.0",
     "express": "^4.17.2",
     "firebase-admin": "^10.0.1",
@@ -51,6 +53,7 @@
     "sequelize": "^6.6.4",
     "serverless": "^2.72.2",
     "serverless-offline": "^8.3.1",
+    "serverless-plugin-typescript": "^2.1.0",
     "ts-jest": "^26.4.1",
     "typeorm": "^0.2.41",
     "winston": "^3.3.3"
